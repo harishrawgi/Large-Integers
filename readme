@@ -1,0 +1,67 @@
+-----------------------------------------------Implementation of Large Integers--------------------------------------------------------------
+
+Part of IISc E0 251 DSA course
+Developed towards the fulfilment of Assignment 2 of the mentioned course
+
+Developed by: Hari Shrawgi
+
+Language: C
+Libraries Used: stdlib, stdio
+
+-----------------------------------------------Implementation of Large Integers--------------------------------------------------------------
+
+1. Basic Introduction
+---------------------
+
+All the src code has been written to implement Large integers. The idea was to implement Large integers using structures and pointers
+in form of a linked list. This allows for arbirtrarily large integers. The base chosen for the implementation was 1000.
+Two operations, namely addition and multiplication of large integers have been implemented along with an expression evaluation module.
+
+2. Salient Features
+------------
+
+This implementation of Large Integers has the following features:
+
+- The code is as generic as possible and uses only singly linked list
+- The code is fast as it uses two pointers LSB and MSB. These two pointers allow for quick addition of digits
+  on either end of the integer. This saves a lot of time while performing operations which otherwise would have been used
+  for iterating everytime a new digit was to be added at one end.
+- BASE of the large integer has been kept as 1000, but this is again generic and can be changed in the header file. But the input module
+  assumes digits of 4 characters. This can be changed to accomodate higher bases.
+- The input module has been designed with specific instructions in mind as per the assignment
+- The code has an expression evaluation module, which is able to perform addition and multiplication from left to right
+
+3. Code description
+-------------------
+
+The src code is divided into three main components:
+
+A. LargeIntegers: This component has the crux of the code, with various functions implemented as per the Assignment.
+                  There are also some helper functions which are used while dealing with large integers.
+                  The description of each function is present in both the header and Implementation files just above the function.
+                  There are some complicated functions which take multiple inputs and also produce an output. The description for
+                  such functions are mentioned in details.
+
+                  This component also defines the basic structures which have been used to represent digits and the
+                  whole large integer as a linked list of digits. These are the structures that have been used everywhere in the code.
+
+B. Main: This component acts as the client side and has a menu driven approach, which will allow the user to repeatedly enter
+          expressions of large integers and see output over standard output.
+
+C. Utils: This component has a few general purpose functions which have been implemented as per requirement. Example: Max function.
+
+
+4. Testing
+----------
+
+The client program allows the user to enter different expressions and test the code. Some sample test cases with expected output
+are already present in the "testcases" folder. These testcases can be executed using simple linux redirection.
+
+
+5. Points to be noted
+----------------------
+
+- Please follow the input guidelines, as the program would not allow for any deviation from the input format
+- The large integers are unsigned
+
+------------------------------------------------------X---------------------------------------------x------------------------------------------
